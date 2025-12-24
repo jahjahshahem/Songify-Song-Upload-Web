@@ -15,11 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create 5 artists
+        \App\Models\Artist::factory(5)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Create 5 albums (each linked to an artist)
+        \App\Models\Album::factory(5)->create();
+
+        // Create 20 songs
+        \App\Models\Song::factory(20)->create();
     }
 }
